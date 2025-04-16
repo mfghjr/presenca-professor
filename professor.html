@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área do Professor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.12/dist/full.css" rel="stylesheet" />
+</head>
+<body class="bg-base-200 flex flex-col items-center p-6 gap-6 min-h-screen">
+
+  <header class="text-center">
+    <h1 class="text-3xl font-bold">Painel do Professor</h1>
+    <p class="text-gray-500 text-sm">Visualização de presença dos alunos</p>
+  </header>
+
+  <section class="card w-full max-w-6xl bg-base-100 shadow-xl p-6">
+    <h2 class="text-xl font-bold mb-4">Lista de Presença</h2>
+
+    <!-- Lista de Alunos -->
+    <ul class="space-y-2">
+      <li class="p-2 {{ verificarPresenca('Adriana Cruz') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }} rounded-md">Adriana Cruz</li>
+      <li class="p-2 {{ verificarPresenca('Ana Cecilia') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }} rounded-md">Ana Cecilia</li>
+      <li class="p-2 {{ verificarPresenca('Anna Beatriz') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }} rounded-md">Anna Beatriz</li>
+      <li class="p-2 {{ verificarPresenca('Antonio Marciano') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }} rounded-md">Antonio Marciano</li>
+      <li class="p-2 {{ verificarPresenca('Daniel Vinicius') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }} rounded-md">Daniel Vinicius</li>
+      <li class="p-2 {{ verificarPresenca('Elias Andre') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }} rounded-md">Elias Andre</li>
+      <li class="p-2 {{ verificarPresenca('Elvis Bruno') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }} rounded-md">Elvis Bruno</li>
+      <li class="p-2 {{ verificarPresenca('Felicio Cavalcante') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }} rounded-md">Felicio Cavalcante</li>
+      <li class="p-2 {{ verificarPresenca('Jairo Rocha') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }} rounded-md">Jairo Rocha</li>
+      <li class="p-2 {{ verificarPresenca('Vinicius Monteiro') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }} rounded-md">Vinicius Monteiro</li>
+      <li class="p-2 {{ verificarPresenca('Marcos Oliveira') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }} rounded-md">Marcos Oliveira</li>
+      <li class="p-2 {{ verificarPresenca('Manoel Fernandes') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }} rounded-md">Manoel Fernandes</li>
+      <li class="p-2 {{ verificarPresenca('Sara de Souza') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }} rounded-md">Sara de Souza</li>
+      <li class="p-2 {{ verificarPresenca('Wan Baster') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }} rounded-md">Wan Baster</li>
+      <li class="p-2 {{ verificarPresenca('Wilson Carlos') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }} rounded-md">Wilson Carlos</li>
+      <li class="p-2 {{ verificarPresenca('Rafael Azevedo') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }} rounded-md">Rafael Azevedo</li>
+      <li class="p-2 {{ verificarPresenca('Noemy Gomes') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }} rounded-md">Noemy Gomes</li>
+    </ul>
+
+    <a href="index.html" class="btn btn-outline mt-6">Voltar para Confirmação</a>
+  </section>
+
+  <script>
+    // Função para verificar se o aluno confirmou presença
+    function verificarPresenca(nome) {
+      return localStorage.getItem(nome) === 'presente';
+    }
+  </script>
+
+</body>
+</html>
